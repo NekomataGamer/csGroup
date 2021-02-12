@@ -19,7 +19,9 @@
         <link href="<?php echo base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
 
-      
+
+        <link href="<?php echo base_url();?>assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
         <!-- Theme Styles -->
         <link href="<?php echo base_url();?>assets/css/connect.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/css/dark_theme.css" rel="stylesheet">
@@ -41,13 +43,13 @@
         <div class="connect-container align-content-stretch d-flex flex-wrap">
             <div class="page-sidebar">
                 <div class="logo-box"><a href="#" class="logo-text">CSGroup</a><a href="#" id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a></div>
-                <div class="page-sidebar-inner slimscroll">
-                    <ul class="accordion-menu">
+                <div class="page-sidebar-inner slimscroll" style="background-color: ; overflow: scroll;">
+                    <ul class="accordion-menu" >
                         <li class="sidebar-title">
                             Apps
                         </li>
                         <li class="active-page">
-                            <a href="<?php echo site_url('secretaria/Index/inicio')?>" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
+                            <a href="<?php echo site_url('secretaria/Index/inicio');?>" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
                         </li>
                         <!-- <li>
                             <a href="mailbox.html"><i class="material-icons-outlined">inbox</i>Mailbox</a>
@@ -65,26 +67,210 @@
                             <a href="todo.html"><i class="material-icons">done</i>Todo</a>
                         </li> -->
                         <li class="sidebar-title">
-                            Alunos/Clientes
+                            Menu
                         </li>
                         <li>
-                            <a href="#"><i class="material-icons">text_format</i>Styles<i class="material-icons has-sub-menu">add</i></a>
+                            <a href="#"><i class="material-icons">text_format</i>Cursos<i class="material-icons has-sub-menu">add</i></a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="styles-typography.html">Typography</a>
+                                    <a href="<?php echo site_url('secretaria/cursos/cadastrar');?>">Cadastrar Curso</a>
                                 </li>
                                 <li>
-                                    <a href="styles-code.html">Code</a>
+                                    <!-- <a href="<?php echo site_url('secretaria/diciplinas/cadastrar');?>">Cadastrar Diciplinas</a> -->
                                 </li>
                                 <li>
-                                    <a href="styles-tables.html">Tables</a>
+                                    <a href="<?php echo site_url('secretaria/cursos/listar');?>">Listar Cursos</a>
+                                </li>
+                                <li>
+                                    <!-- <a href="<?php echo site_url('secretaria/diciplinas/listar');?>">Listar Diciplinas</a> -->
+                                </li>
+                                <!-- <li>
+                                    <a href="styles-tables.html">Cadastro de Turmas</a>
                                 </li>
                                 <li>
                                     <a href="styles-icons.html">Icons</a>
+                                </li> -->
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Alunos
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Alunos<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/aluno/cadastrar');?>">Cadastrar Aluno</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/aluno/listar');?>">Lista de Alunos</a>
                                 </li>
                             </ul>
                         </li>
+
+                        <!-- <li class="sidebar-title">
+                            Turmas
+                        </li> -->
                         <li>
+                            <a href="#"><i class="material-icons">text_format</i>Turmas<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/turmas/cadastrar');?>">Cadastrar Turmas</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/turmas/listar');?>">Lista de Turmas</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="styles-tables.html">Cadastro de Turmas</a>
+                                </li> -->
+                                <!-- <li>
+                                    <a href="styles-icons.html">Icons</a>
+                                </li> -->
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Documentos
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Documentos<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/documentos/adicionar');?>">Adicionar Documentos</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/documentos/adicionar_aluno');?>">Adicionar Documento ao Aluno</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/documentos/listar');?>">Listar Documentos</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Matriculas
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Matriculas<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/matriculas/matricular');?>">Matricular Aluno</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('secretaria/matriculas/listar');?>">Lista de Matriculas</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Contratos
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Contratos<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Adicionar Contrato</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Lista de Contratos</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Relatório de Contratos</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Relatórios
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Relatórios<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Filtrar Relatórios</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Email Marketing
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Peças Promocionais<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Adicionar</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Portal do Aluno
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Portal do Aluno<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Adicionar Comunicado</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Lista de Comunicados</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Livro de Ocorrencia
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Livro de Ocorrência<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Ocorrência do Aluno</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Ocorrência da Turma</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="sidebar-title">
+                            Calendario da Turma
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Calendario da Turma<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Lista de Turmas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- <li class="sidebar-title">
+                            Cadastros
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="material-icons">text_format</i>Cadastros Gerais<i class="material-icons has-sub-menu">add</i></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="styles-typography.html">Cadastrar Unidades</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Cadastrar Professor</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Cadastrar Tutor</a>
+                                </li>
+                                <li>
+                                    <a href="styles-typography.html">Cadastrar Coordenador</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        
+
+                        <!-- <li>
                             <a href=""><i class="material-icons">apps</i>Components<i class="material-icons has-sub-menu">add</i></a>
                             <ul class="sub-menu">
                                 <li>
@@ -186,6 +372,6 @@
                         <li>
                             <a href="#"><i class="material-icons">access_time</i>Change Log</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>

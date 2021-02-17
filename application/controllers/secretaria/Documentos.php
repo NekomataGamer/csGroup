@@ -14,7 +14,7 @@ class Documentos extends CI_Controller {
         $this->load->view('secretaria/adicionar_documento_aluno.php');
     }
 
-    public function editar($id){
-        echo 'baralho';
+    public function listar(){
+        $this->load->view('secretaria/listar_documentos.php');
     }
 }

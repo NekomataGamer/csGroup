@@ -124,8 +124,8 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">Sexo </label>
                                         <select id="inputState" class="form-control custom-select" name="sexo">
-                                            <option value="M">Macho</option>
-                                            <option value="F">Femea</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Feminino</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">

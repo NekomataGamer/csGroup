@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aluno extends CI_Controller {
+class Matriculas extends CI_Controller {
     public $needAuth = false;
 	public $authRedirect = 'login';
 	public $authModel = "users_model";

@@ -75,14 +75,12 @@
                                 <li>
                                     <a href="<?php echo site_url('secretaria/cursos/cadastrar');?>">Cadastrar Curso</a>
                                 </li>
-                                <li>
-                                    <!-- <a href="<?php echo site_url('secretaria/diciplinas/cadastrar');?>">Cadastrar Diciplinas</a> -->
-                                </li>
+                                
                                 <li>
                                     <a href="<?php echo site_url('secretaria/cursos/listar');?>">Listar Cursos</a>
                                 </li>
                                 <li>
-                                    <!-- <a href="<?php echo site_url('secretaria/diciplinas/listar');?>">Listar Diciplinas</a> -->
+                                    <a href="<?php echo site_url('secretaria/diciplinas/listar');?>">Diciplinas</a>
                                 </li>
                                 <!-- <li>
                                     <a href="styles-tables.html">Cadastro de Turmas</a>
@@ -254,16 +252,16 @@
                             <a href="#"><i class="material-icons">text_format</i>Cadastros Gerais<i class="material-icons has-sub-menu">add</i></a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="styles-typography.html">Cadastrar Unidades</a>
+                                    <a href="<?= site_url('secretaria/unidades/cadastrar');?>">Cadastrar Unidades</a>
                                 </li>
                                 <li>
-                                    <a href="styles-typography.html">Cadastrar Professor</a>
+                                    <a href="<?= site_url('secretaria/professor/cadastrar')?>">Cadastrar Professor</a>
                                 </li>
                                 <li>
-                                    <a href="styles-typography.html">Cadastrar Tutor</a>
+                                    <a href="<?= site_url('secretaria/tutor/cadastrar')?>">Cadastrar Tutor</a>
                                 </li>
                                 <li>
-                                    <a href="styles-typography.html">Cadastrar Coordenador</a>
+                                    <a href="<?= site_url('secretaria/coordenador/cadastrar')?>">Cadastrar Coordenador</a>
                                 </li>
                             </ul>
                         </li>

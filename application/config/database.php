@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = [
 	'dsn'	=> '',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => '',
+	'hostname' => 'localhost',
+	'username' => 'cosersal_bucker',
+	'password' => '$_7RKD&xtaf=',
+	'database' => 'cosersal_testes',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
